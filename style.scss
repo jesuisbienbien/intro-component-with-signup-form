@@ -19,6 +19,8 @@
   --grayish-blue: hsl(246, 25%, 77%);
 }
 
+/* Styling body */
+
 body {
   font-family: "Poppins", sans-serif;
   width: 100%;
@@ -31,11 +33,22 @@ body {
   text-align: center;
 }
 
+/* Styling main */
+
 main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
 }
+
+/* Styling wrapper container that has heading div and sign-up form div */
+.wrapper {
+  max-width: 645px;
+}
+
+/* Stying heading */
 .heading {
   h1 {
     font-weight: 700;
@@ -46,7 +59,9 @@ main {
   }
 }
 
+/* Styling sign-up form section that has an article and a form */
 .signup-form {
+  /* Styling article */
   article {
     p {
       background: var(--blue);
@@ -59,22 +74,54 @@ main {
       }
     }
   }
+  /* Error messages */
+  .error-message {
+    color: red;
+    font-size: 0.7rem;
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  /* Error inputs: border and placeholder */
+  .error-input {
+    border: solid 1.5px var(--red);
+    background-image: url(images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: right 10px bottom 10px;
+  }
+  .error-input::placeholder {
+    color: var(--red);
+    opacity: 1;
+  }
 
+  /* Styling the actual form */
   form {
     background-color: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 3px 0px;
     margin-top: 2rem;
     padding: 1.5rem;
+
+    /* All inputs: fname, lname, email and password */
     input {
       color: var(--dark-blue);
       width: 100%;
-      font-weight: 500;
+      font-weight: 600;
       border-radius: 5px;
-      border: solid 1px var(--grayish-blue);
+      border: solid 0.8px rgb(204, 201, 201); //var(--grayish-blue)
       padding: 1rem 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
+    /* Submit button */
+    input.submit-button {
+      background-color: var(--green);
+      text-transform: uppercase;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* Term Aggreement */
     small {
       color: var(--grayish-blue);
       font-size: 0.7rem;
@@ -86,17 +133,57 @@ main {
     }
   }
 }
-.submit-button {
-  background-color: var(--green);
-  text-transform: uppercase;
-  color: white;
-  font-weight: 500;
+
+/* Input when focus */
+.form__input:focus {
+  outline: none;
+  border: solid 1.5px var(--blue);
+  background-image: none;
 }
 
+/* Styling placeholder */
+.form__input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--dark-blue);
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+/* Footer */
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: var(--dark-blue);
+}
+
+@media screen and (min-width: 950px) {
+  body {
+    background: url(images/bg-intro-desktop.png);
+    background-size: cover;
+    background-position: top;
+    background-color: var(--red);
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    max-width: 988px;
+    margin: 5rem;
+  }
+  .wrapper > * {
+    flex: 1;
+  }
+  .heading {
+    text-align: left;
+    padding-top: 6rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
 }

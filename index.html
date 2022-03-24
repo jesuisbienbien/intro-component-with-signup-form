@@ -25,37 +25,75 @@
   </head>
   <body>
     <main>
-      <header class="heading">
-        <h1>Learn to code by watching others</h1>
-        <p>
-          See how experienced developers solve problems in real-time. Watching
-          scripted tutorials is great, but understanding how developers think is
-          invaluable.
-        </p>
-      </header>
+      <div class="wrapper">
+        <header class="heading">
+          <h1>Learn to code by watching others</h1>
+          <p>
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </header>
 
-      <section class="signup-form">
-        <article>
-          <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
-        </article>
+        <section class="signup-form">
+          <article>
+            <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+          </article>
 
-        <form action="submit" class="form">
-          <input type="text" name="First Name" value="First Name" />
-          <input type="text" name="Last Name" value="Last Name" />
-          <input type="email" name="Email Address" value="Email Address" />
-          <input type="password" name="Password" value="Password" />
-          <input
-            type="submit"
-            value="Claim Your Free Trial"
-            class="submit-button"
-          />
+          <form id="form" action="/" method="GET" class="form">
+            <input
+              id="fname"
+              class="form__input"
+              type="text"
+              name="fname"
+              value=""
+              placeholder="First Name"
+              autocomplete="off"
+            />
+            <div id="error-fname" class="error-message"></div>
+            <input
+              id="lname"
+              class="form__input"
+              type="text"
+              name="lname"
+              value=""
+              placeholder="Last Name"
+              autocomplete="off"
+            />
+            <div id="error-lname" class="error-message"></div>
+            <input
+              id="email"
+              class="form__input"
+              type="email"
+              name="email"
+              value=""
+              placeholder="Email Address"
+              autocomplete="off"
+            />
+            <div id="error-email" class="error-message"></div>
+            <input
+              id="password"
+              class="form__input"
+              type="password"
+              name="password"
+              value=""
+              placeholder="Password"
+              autocomplete="off"
+            />
+            <div id="error-password" class="error-message"></div>
+            <input
+              type="submit"
+              value="Claim Your Free Trial"
+              class="submit-button"
+            />
 
-          <small
-            >By clicking the button, you are agreeing to our
-            <a href="#">Terms and Services</a>
-          </small>
-        </form>
-      </section>
+            <small
+              >By clicking the button, you are agreeing to our
+              <a href="#">Terms and Services</a>
+            </small>
+          </form>
+        </section>
+      </div>
     </main>
 
     <footer>
@@ -66,5 +104,6 @@
         >. Coded by <a href="#">Nguyen Nguyen</a>.
       </p>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
