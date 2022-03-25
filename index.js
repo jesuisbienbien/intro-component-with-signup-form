@@ -61,7 +61,9 @@ form.addEventListener("submit", (e)=> {
 
     //check all input fields
     if(checkInputs()){
+        removeErrors();
         alert("Congratulations! You have successfully claimed your free trial!");
+        
     }
     
 })
