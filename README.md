@@ -92,6 +92,8 @@ _to split a parent element into equal parts, put flex:1 on all its child element
 }
 ```
 
+**remove a class from classList**
+
 ```javascript
 function removeErrors() {
   for (let i = 0; i < inputs.length; i++) {
