@@ -45,25 +45,45 @@ function checkInputs(){
         }
     }
 
+
     return result;
 
 }
 
+function resetPlaceholders() {
+    //reset placeholder
 
+    fname.placeholder="First Name";
+    lname.placeholder="Last Name";
+    email.placeholder="Email Address";
+    password.placeholder="Password";
+
+    
+
+}
+
+
+ function clearInputs(){
+    //clear out form after submitting successfully, set value=""
+    for(let i=0; i<inputs.length; i++){
+        inputs[i].value="";
+    }
+    alert("Congratulations! You have successfully claimed your free trial!")
+}
 
 /* when submit button is clicked */
 
 form.addEventListener("submit", (e)=> {
     e.preventDefault();
+
+    // reset all inputs fields
+    resetPlaceholders();
     
     //remove all errors previously
     removeErrors();
 
     //check all input fields
     if(checkInputs()){
-        removeErrors();
-        alert("Congratulations! You have successfully claimed your free trial!");
-        
+        clearInputs();
     }
-    
 })
